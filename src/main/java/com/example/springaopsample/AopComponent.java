@@ -1,5 +1,4 @@
 package com.example.springaopsample;
-import org.aspectj.lang.JoinPoint;
 
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
@@ -9,14 +8,19 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 public class AopComponent {
-    @Before("execute")
+    @Before("execution(* *..*.*AopController.*(..))")
     public void beforeComponent() {
+        System.out.println("beforeComponent");
+    }
+
+    @After("execution(* *..*.*AopController.*(..))")
+    public void afterComponent() {
+        System.out.println("afterComponent");
 
     }
 
-    @After("execute")
-    public void afterComponent(){
-
+    public void doService() {
+        System.out.println("hello");
     }
 
 }
