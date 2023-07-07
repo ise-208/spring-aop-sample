@@ -1,6 +1,7 @@
 package com.example.springaopsample;
 
 import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
@@ -17,6 +18,11 @@ public class AopComponent {
     public void afterComponent() {
         System.out.println("afterComponent");
 
+    }
+
+    @Around("target(com.example.springaopsample.AopController)")
+    public void targetComponent() {
+        System.out.println("targetComponent");
     }
 
     public void doService() {
