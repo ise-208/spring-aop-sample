@@ -1,9 +1,7 @@
 package com.example.springaopsample;
 
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -20,10 +18,16 @@ public class AopComponent {
 
     }
 
-    @Around("target(com.example.springaopsample.AopController)")
-    public void targetComponent() {
-        System.out.println("targetComponent");
+    @AfterReturning(value = "execution(* *..*.*AopController.*(..))", returning = "sample")
+    public void afterReturningComponent(JoinPoint joinPoint) {
+        System.out.println("afterReturningComponente" + joinPoint.getSignature());
+
     }
+
+//    @Around("target(com.example.springaopsample.AopController)")
+//    public void targetComponent() {
+//        System.out.println("targetComponent");
+//    }
 
     public void doService() {
         System.out.println("hello");
