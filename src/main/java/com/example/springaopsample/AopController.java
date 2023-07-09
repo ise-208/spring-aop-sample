@@ -20,6 +20,11 @@ public class AopController {
         aopComponent.doService();
     }
 
+    @GetMapping("/ex")
+    public void ex() {
+        throw new RuntimeException();
+    }
+
     @GetMapping("/json")
     public void json() {
         logger.info("info message");
