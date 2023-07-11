@@ -20,11 +20,6 @@ public class AopComponent {
     }
 
 
-//    @Around("target(com.example.springaopsample.AopController)")
-//    public void targetComponent() {
-//        System.out.println("targetComponent");
-//    }
-
     public void doService() {
         System.out.println("hello");
     }
