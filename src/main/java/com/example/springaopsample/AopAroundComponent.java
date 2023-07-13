@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-public class AopTargetComponent {
+public class AopAroundComponent {
 
     @Around("target(com.example.springaopsample.AopController)")
     public void targetComponent() {

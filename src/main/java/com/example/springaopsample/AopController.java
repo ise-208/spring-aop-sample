@@ -36,5 +36,4 @@ public class AopController {
     public void json() {
         logger.info("info message");
     }
-
 }

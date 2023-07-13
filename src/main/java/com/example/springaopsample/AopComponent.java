@@ -16,7 +16,6 @@ public class AopComponent {
     @After("execution(* *..*.*AopController.*(..))")
     public void afterComponent() {
         System.out.println("afterComponent");
-
     }
 
 
