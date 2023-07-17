@@ -8,13 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-public class AopAfterComponent {
-
-    @AfterReturning(value = "execution(* *..*.*AopController.*(..))")
-    public void afterReturningComponent(JoinPoint joinPoint) {
-        System.out.println("afterReturningComponent" + joinPoint.getSignature());
-    }
-
+public class AopAfterReturningComponent {
 
     @AfterThrowing(value = "execution(* *..*.*AopController.*(..))", throwing = "throwable")
     public void afterThrowingComponent(JoinPoint joinPoint, Throwable throwable) throws RuntimeException {

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class AopPointcutComponent {
 
-    @Pointcut("@annotation(org.springframework.web.bind.annotation.GetMapping)")
+    @Pointcut(value = "@annotation(org.springframework.web.bind.annotation.GetMapping)")
     public void pointcutAnnotationComponent() {
         System.out.println("pointcutAnnotationComponent");
     }

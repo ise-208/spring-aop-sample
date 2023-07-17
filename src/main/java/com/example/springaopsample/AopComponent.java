@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 public class AopComponent {
-    @Before("execution(* *..*.*AopController.*(..))")
+    @Before(value = "execution(* *..*.*AopController.*(..))")
     public void beforeComponent() {
         System.out.println("beforeComponent");
     }

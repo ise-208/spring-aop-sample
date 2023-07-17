@@ -6,17 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-public class AopAroundComponent {
-
-    @Around("target(com.example.springaopsample.AopController)")
-    public void targetComponent() {
-        System.out.println("targetComponent");
-    }
-
-    @Around("within(com.example.springaopsample.AopController)")
-    public void withinComponent() {
-        System.out.println("withinComponent");
-    }
+public class AopAroundTargetArgsComponent {
 
     @Around("target(com.example.springaopsample.AopController) && args(java.lang.String)")
     public void withinArgComponent() {
